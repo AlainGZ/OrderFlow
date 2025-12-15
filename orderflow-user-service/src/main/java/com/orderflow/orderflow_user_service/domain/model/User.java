@@ -4,15 +4,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.time.Instant;
+
 @Entity
 @Table(name = "Users")
 @Data
 @AllArgsConstructor@NoArgsConstructor
 @Builder(toBuilder = true)
 public class User {
+
+	private Long id;
 	private String name;
 	private String lastname;
-	private Long documentId;
 	private String email;
-	private String Password;
+	private String passwordHash;
+	private Instant createdAt;
 }
